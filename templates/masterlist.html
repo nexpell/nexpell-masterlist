@@ -1,0 +1,121 @@
+<!-- masterlist_head -->
+<div class="head-boxes {class}">
+    <span class="head-boxes-head">{title}</span>
+    <h2 class="head-h2">
+        <span class="head-boxes-title">{title}</span>
+    </h2>
+    <p class="head-boxes-foot">{subtitle}</p>
+</div>
+<!-- END -->
+<!-- masterlist_content -->
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+
+        <h2 class="mb-3 fw-bold">Serverliste</h2>
+
+
+
+        <!-- VERSION DISPLAY -->
+        <div class="d-flex align-items-center gap-4">
+
+            <!-- COVER -->
+            <div class="version_cover_box">
+                <img src="{version_cover}" alt="{version_title}">
+            </div>
+
+            <!-- TEXT -->
+            <div class="d-flex flex-column justify-content-center">
+                <!-- INFO TEXT (SEPARAT!) -->
+                <p class="mb-4">
+                    Hier findest du eine Übersicht aktiver Game-Server für verschiedene Versionen von Call of Duty. 
+                    Die Masterlist zeigt dir verfügbare Server, aktuelle Spielerzahlen sowie weitere Details wie Map und Spielmodus.
+                    Call of Duty ist eine bekannte Ego-Shooter-Spielreihe, die im Zweiten Weltkrieg begann und später auch moderne Kriegsszenarien umfasst.
+                </p>
+                <div class="fw-bold fs-4">{version_title}</div>
+                <div>
+                    Version {version_number}
+                </div>
+            
+
+            <!-- BADGE -->
+            <div class="ms-auto">
+                <span class="badge bg-primary fs-6 px-3 py-2">
+                    {selected_version_label}
+                </span>
+            </div>
+</div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- SELECT -->
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        {select_setting}
+    </div>
+</div>
+
+
+<!-- TABLE -->
+<div class="card">
+    <div class="card-body p-0">
+
+        <div class="table-responsive">
+            <table class="table table-secondary table-hover align-middle mb-0">
+                <thead>
+                    <tr class="text-uppercase small text-secondary">
+                        <th>+</th>
+                        <th>Servername</th>
+                        <th>IP</th>
+                        <th>Port</th>
+                        <th>Spiel</th>
+                        <th>Map</th>
+                        <th>Spieler</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {servers}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<style>
+.card img {
+    transition: transform 0.2s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.table-secondary {
+    --bs-table-bg: #2a2f36;
+    --bs-table-striped-bg: #323842;
+    --bs-table-hover-bg: #3a414c;
+    --bs-table-color: #ffffff;
+}
+
+.version_cover_box {
+    width: 350px;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0; /* 🔥 verhindert schrumpfen */
+}
+
+.version_cover_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.version_cover_box:hover img {
+    transform: scale(1.08); /* optional nicer zoom */
+}
+</style>
+<!-- END -->

@@ -1,0 +1,8 @@
+{
+    "name": "Masterlist CoD",
+    "slug": "masterlist_cod",
+    "version": "1.0.0",
+    "author": "Nexpell",
+    "description": "Call of Duty master server list",
+    "api_version": 1
+}

@@ -143,7 +143,7 @@ function getVersionDisplay(string $version, array $versions): array
                 return [
                     'title' => $game,
                     'version' => $short,
-                    'cover' => "includes/plugins/masterlist/images/covers/" . $cover
+                    'cover' => "/includes/plugins/masterlist/images/covers/" . $cover
                 ];
             }
         }
@@ -152,7 +152,7 @@ function getVersionDisplay(string $version, array $versions): array
     return [
         'title' => $version,
         'version' => '',
-        'cover' => "includes/plugins/masterlist/images/covers/default.jpg"
+        'cover' => "/includes/plugins/masterlist/images/covers/default.jpg"
     ];
 }
 
@@ -171,7 +171,7 @@ $select_setting = '
 
 <label for="version">Version:</label>
 
-<select class="form-select border border-dark" onchange="changeVersion(this.value)">
+<select id="version" class="form-select border border-dark" onchange="changeVersion(this.value)">
 
     <optgroup label="COD 1">
         <option value="cod1_1.1" ' . ($selected_version_token == 'cod1_1.1' ? 'selected' : '') . '>1.1</option>
@@ -314,6 +314,7 @@ echo $tpl->loadTemplate("masterlist", "content", $data_array, "plugin");
 
 <script>
 function changeVersion(version) {
-    window.location.href = "index.php?site=masterlist&version=" + version;
+    window.location.href =
+        "/de/masterlist/version/" + version;
 }
 </script>
